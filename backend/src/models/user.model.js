@@ -4,7 +4,7 @@ import mongoose from "mongoose"
     email:{
         type:String,
         required:true,
-        unique:true
+        unique:true,
     },
     fullName:{
         type:String,
@@ -17,10 +17,10 @@ import mongoose from "mongoose"
     },
     profilePic:{
         type:String,
-        deafault:""
+        default:""
     }
 
 },{timestamps:true});
 
-const User = mongoose.model("User",userSchema)
+const User = mongoose.model("User",userSchema)//Mongoose automatically collection banayega: users
 export default User;

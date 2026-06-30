@@ -2,12 +2,13 @@ import express from "express";
 
 import { protectRoute } from "../middleware/auth.middleware.js";
 import messageModel from "../models/message.model.js"
-import { getUserForSidebar, sendMessage } from "../controllers/message.controller.js";
+import { getMessages, getUserForSidebar, sendMessage } from "../controllers/message.controller.js";
 
 const router =  express.Router();
 
 router.get("/users",protectRoute,getUserForSidebar);
-router.get("/:id",protectRoute,sendMessage);  
-router.post("/send/:id");
+router.get("/:id",protectRoute,getMessages);  
+router.post("/send/:id", protectRoute,sendMessage);
+   
 
-export default router;
+export default router;  
